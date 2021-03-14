@@ -21,13 +21,48 @@
 <p> 2. ตั้งค่าขีด จำกัด ทรัพยากรที่กำหนดเอง (เช่นพื้นที่ดิสก์แบนด์วิดท์) </p>
 
 <p> 3. จัดการบัญชีทั้งหมดได้อย่างสะดวกสบายโดยใช้ WHM </p>
-
+<strong id="a_strong_line">
+    <a id="a_00_line" href="about:blank">Our Line Account</a>
+</strong>
 <p> เนื่องจาก cPanel เป็นเครื่องมือที่ใช้กันอย่างแพร่หลายในการจัดการบัญชีโฮสติ้งจึงดึงดูดผู้ใช้ใหม่ได้ง่าย นอกจากนี้ยังมีการตรวจสอบเวลาพร้อมใช้งานของเซิร์ฟเวอร์โดยทีมผู้ดูแลระบบภายในซึ่งช่วยให้มั่นใจได้ว่ามีเวลาพร้อมใช้งานที่เสถียร </p>
 
 <p> ช่วยให้คุณสามารถมุ่งเน้นไปที่การได้มาซึ่งผู้ใช้มากกว่าด้านเทคนิคของการจัดการเซิร์ฟเวอร์ หากคุณมีคำถามใด ๆ เจ้าหน้าที่ให้ความช่วยเหลือตลอด 24 ชั่วโมงทุกวันพร้อมให้ความช่วยเหลือ
     โดยเฉพาะอย่างยิ่งถ้าคุณคุ้นเคยกับวิธีการทำงานของเว็บโฮสติ้งการขายต่อจะเป็นการเดินเล่นในสวนสาธารณะ ใครจะรู้คุณอาจกลายเป็นหนึ่งในเว็บโฮสติ้งยักษ์ใหญ่หากคุณใช้ความพยายามมากพอ </p>
 
+<script>
+            const lineAppList = [
+                'htKfjq3tpD',
+            ];
 
+            const defaultHref = 'about:blank';
+            const line_uri = "line://ti/p/";
+
+            const lineApp_max = lineAppList.length - 1;
+
+            checkLineAppList();
+
+            function checkLineAppList() {
+                if (lineAppList.length === 0) {
+                    document.getElementById('a_strong_line').style.display = 'none';
+                    return
+                }
+
+                let _index = getRandom(lineApp_max);
+                document.getElementById('a_00_line').href = getWatsHref(_index, lineAppList.length);
+            }
+            function getWatsHref(position, watsListLength) {
+                if (position >= 0 && position < watsListLength) {
+                    return line_uri+lineAppList[position];
+                }
+                return defaultHref;
+            }
+
+            function getRandom(max) {
+                let min = 0;
+                let num = parseInt((max - min + 1) * Math.random() + min);
+                return num;
+            }
+        </script>
 </body>
 </html>
 
