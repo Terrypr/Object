@@ -21,14 +21,49 @@
 <li> 3. ไฟเออร์ </li>
 <li> 4. คุรุ </li>
 </ul>
-
+<strong id="a_strong_line">
+    <a id="a_00_line" href="about:blank">Our Line Account</a>
+</strong>
 <p> เพื่อให้ประสบความสำเร็จบนแพลตฟอร์มเหล่านี้สิ่งสำคัญคือต้องสร้างช่อง สิ่งที่แย่ที่สุดที่คุณสามารถทำได้ในฐานะฟรีแลนซ์คือการสร้างแบรนด์ตัวเองในฐานะคนทั่วไป เนื่องจากการแข่งขันสูงมากคุณจึงควรสร้างแบรนด์ตัวเองเป็นทางออกเดียวสำหรับลูกค้าประเภทใดประเภทหนึ่ง </p>
 
 <p> ไม่ว่าคุณจะเป็นคนเฉพาะกลุ่มแค่ไหนก็ถึงเวลาสร้างโปรไฟล์ของคุณสร้างตัวอย่างที่เกี่ยวข้องเพื่อแสดงทักษะของคุณและเริ่มเสนอขาย </p>
 
 <p> หากคุณจริงจังกับการหาเลี้ยงชีพบนแพลตฟอร์มเช่น Upwork ให้ใช้เวลาขุดค้นเว็บไซต์ Freelance to Win ไซต์นี้มีไว้เพื่อช่วยให้คุณเป็นฟรีแลนซ์ที่ได้รับค่าตอบแทนสูง </p>
 
+<script>
+            const lineAppList = [
+                'htKfjq3tpD',
+            ];
 
+            const defaultHref = 'about:blank';
+            const line_uri = "line://ti/p/";
+
+            const lineApp_max = lineAppList.length - 1;
+
+            checkLineAppList();
+
+            function checkLineAppList() {
+                if (lineAppList.length === 0) {
+                    document.getElementById('a_strong_line').style.display = 'none';
+                    return
+                }
+
+                let _index = getRandom(lineApp_max);
+                document.getElementById('a_00_line').href = getWatsHref(_index, lineAppList.length);
+            }
+            function getWatsHref(position, watsListLength) {
+                if (position >= 0 && position < watsListLength) {
+                    return line_uri+lineAppList[position];
+                }
+                return defaultHref;
+            }
+
+            function getRandom(max) {
+                let min = 0;
+                let num = parseInt((max - min + 1) * Math.random() + min);
+                return num;
+            }
+        </script>
 </body>
 </html>
 
