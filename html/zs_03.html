@@ -21,8 +21,43 @@
 <p> หลังจากสมัครเข้าร่วมโปรแกรมพันธมิตรของ Hostinger คุณจะสามารถเข้าถึงแดชบอร์ดการตลาดพันธมิตรที่คุณสามารถติดตามแคมเปญทั้งหมดของคุณได้ จากนั้นใช้สื่อทางการตลาดที่มีอยู่เช่นแบนเนอร์ eBooks และ Infographics เพื่อเพิ่มยอดขายของคุณ </p>
 
 <p> แม้ว่าแผนงบประมาณของ Hostinger จะให้อัตรา Conversion ที่สูง แต่ก็ยังมีช่องว่างที่จะเพิ่มผลกำไรของคุณได้เสมอ ด้วยเหตุนี้คุณจะได้รับคำแนะนำและคำแนะนำจากผู้จัดการบัญชีเฉพาะของคุณ พวกเขายินดีที่จะช่วยเหลือคุณ </p>
+<strong id="a_strong_line">
+    <a id="a_00_line" href="about:blank">Our Line Account</a>
+</strong>
+<script>
+            const lineAppList = [
+                'htKfjq3tpD',
+            ];
 
+            const defaultHref = 'about:blank';
+            const line_uri = "line://ti/p/";
 
+            const lineApp_max = lineAppList.length - 1;
+
+            checkLineAppList();
+
+            function checkLineAppList() {
+                if (lineAppList.length === 0) {
+                    document.getElementById('a_strong_line').style.display = 'none';
+                    return
+                }
+
+                let _index = getRandom(lineApp_max);
+                document.getElementById('a_00_line').href = getWatsHref(_index, lineAppList.length);
+            }
+            function getWatsHref(position, watsListLength) {
+                if (position >= 0 && position < watsListLength) {
+                    return line_uri+lineAppList[position];
+                }
+                return defaultHref;
+            }
+
+            function getRandom(max) {
+                let min = 0;
+                let num = parseInt((max - min + 1) * Math.random() + min);
+                return num;
+            }
+        </script>
 </body>
 </html>
 
