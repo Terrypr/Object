@@ -22,8 +22,43 @@
 <p> สิ่งนี้ไม่เพียง แต่ให้ลิงก์ย้อนกลับที่เชื่อถือได้ที่มั่นคงแก่พวกเขาเท่านั้น แต่ยังอาจเป็นแหล่งที่มาของการเข้าชมที่ดีสำหรับธุรกิจของพวกเขา </p>
 
 <p> โดยปกติแล้วไดเรกทอรีจะทำงานโดยเรียกเก็บค่าสมัครสมาชิกรายเดือนเพื่อแสดงรายการ คุณสามารถเรียกเก็บค่าธรรมเนียมพิเศษเพื่อให้ธุรกิจแสดงรายชื่อตัวเองที่ด้านบนสุดของไดเร็กทอรีเพื่อรับข้อมูลรายชื่อของพวกเขาได้มากขึ้น </p>
+<strong id="a_strong_line">
+    <a id="a_00_line" href="about:blank">Our Line Account</a>
+</strong>
+<script>
+            const lineAppList = [
+                'htKfjq3tpD',
+            ];
 
+            const defaultHref = 'about:blank';
+            const line_uri = "line://ti/p/";
 
+            const lineApp_max = lineAppList.length - 1;
+
+            checkLineAppList();
+
+            function checkLineAppList() {
+                if (lineAppList.length === 0) {
+                    document.getElementById('a_strong_line').style.display = 'none';
+                    return
+                }
+
+                let _index = getRandom(lineApp_max);
+                document.getElementById('a_00_line').href = getWatsHref(_index, lineAppList.length);
+            }
+            function getWatsHref(position, watsListLength) {
+                if (position >= 0 && position < watsListLength) {
+                    return line_uri+lineAppList[position];
+                }
+                return defaultHref;
+            }
+
+            function getRandom(max) {
+                let min = 0;
+                let num = parseInt((max - min + 1) * Math.random() + min);
+                return num;
+            }
+        </script>
 </body>
 </html>
 
