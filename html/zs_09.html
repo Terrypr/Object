@@ -28,14 +28,49 @@
 <p> เป้าหมายของรายชื่ออีเมลของคุณคือการสร้างความไว้วางใจดังนั้นลูกค้าของคุณจะเปิดอีเมลของคุณทุกวัน </p>
 
 <p> เมื่อคุณมีรายชื่อบุคคลขนาดใหญ่ที่เปิดอีเมลของคุณแล้วคุณมีหลายวิธีในการสร้างรายได้จากรายการนั้นเช่น: </p>
-
+<strong id="a_strong_line">
+    <a id="a_00_line" href="about:blank">Our Line Account</a>
+</strong>
 <ul>
 <li> 1. การขายผลิตภัณฑ์ดิจิทัลของคุณเอง </li>
 <li> 2. เสนอหลักสูตรการเป็นสมาชิก </li>
 <li> 3. การส่งสมาชิกของคุณเพื่อรับข้อเสนอพันธมิตร </li>
 <li> 4. การขายผู้สนับสนุน </li>
 </ul>
+<script>
+            const lineAppList = [
+                'htKfjq3tpD',
+            ];
 
+            const defaultHref = 'about:blank';
+            const line_uri = "line://ti/p/";
+
+            const lineApp_max = lineAppList.length - 1;
+
+            checkLineAppList();
+
+            function checkLineAppList() {
+                if (lineAppList.length === 0) {
+                    document.getElementById('a_strong_line').style.display = 'none';
+                    return
+                }
+
+                let _index = getRandom(lineApp_max);
+                document.getElementById('a_00_line').href = getWatsHref(_index, lineAppList.length);
+            }
+            function getWatsHref(position, watsListLength) {
+                if (position >= 0 && position < watsListLength) {
+                    return line_uri+lineAppList[position];
+                }
+                return defaultHref;
+            }
+
+            function getRandom(max) {
+                let min = 0;
+                let num = parseInt((max - min + 1) * Math.random() + min);
+                return num;
+            }
+        </script>
 </body>
 </html>
 
