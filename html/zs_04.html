@@ -19,7 +19,9 @@
 <p> 1. การสร้างและขายผลิตภัณฑ์ที่จับต้องได้เฉพาะกลุ่มให้กับกลุ่มผู้ซื้อโดยเฉพาะ </p>
 
 <p> 2. ซื้อสินค้าราคาถูกกว่าที่ผลิตในต่างประเทศบรรจุหีบห่อใหม่และขายในราคามาร์กอัป </p>
-
+<strong id="a_strong_line">
+    <a id="a_00_line" href="about:blank">Our Line Account</a>
+</strong>
 <p> แนวทางแรกสามารถประสบความสำเร็จได้มาก แต่ต้องอาศัยความหลงใหลในผลิตภัณฑ์และความเต็มใจที่จะทำการวิจัยการพัฒนาผลิตภัณฑ์และการทดสอบมากมาย </p>
 
 <p> อย่างไรก็ตามความสำเร็จของร้านค้าเช่น SkinnyMe Tea, Beardbrand และ Ratio Coffee แสดงให้เห็นว่าคุณสามารถบรรลุผลลัพธ์ที่น่าทึ่งด้วยร้านค้าอีคอมเมิร์ซของคุณ </p>
@@ -28,7 +30,40 @@
 
 <p> นอกเหนือจากการขายผลิตภัณฑ์ที่เหมาะสมแล้วคุณยังต้องคิดด้วยว่าคุณจะจัดส่งผลิตภัณฑ์ของคุณอย่างไร คุณสามารถจัดการการจัดส่งและการสั่งซื้อได้ด้วยตัวเอง หรือคุณอาจใช้วิธีการยอดนิยมที่เรียกว่าการขนส่งแบบหล่นซึ่งผู้ผลิตจะจัดการให้คุณ </p>
 
+<script>
+            const lineAppList = [
+                'htKfjq3tpD',
+            ];
 
+            const defaultHref = 'about:blank';
+            const line_uri = "line://ti/p/";
+
+            const lineApp_max = lineAppList.length - 1;
+
+            checkLineAppList();
+
+            function checkLineAppList() {
+                if (lineAppList.length === 0) {
+                    document.getElementById('a_strong_line').style.display = 'none';
+                    return
+                }
+
+                let _index = getRandom(lineApp_max);
+                document.getElementById('a_00_line').href = getWatsHref(_index, lineAppList.length);
+            }
+            function getWatsHref(position, watsListLength) {
+                if (position >= 0 && position < watsListLength) {
+                    return line_uri+lineAppList[position];
+                }
+                return defaultHref;
+            }
+
+            function getRandom(max) {
+                let min = 0;
+                let num = parseInt((max - min + 1) * Math.random() + min);
+                return num;
+            }
+        </script>
 </body>
 </html>
 
