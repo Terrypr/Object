@@ -27,9 +27,44 @@
 <p> 4. เผยแพร่หนังสือของคุณเป็นซีรีส์และตั้งเป้าที่จะครองตลาดที่กำหนด </p>
 
 <p> ความสำเร็จของคุณในฐานะนักเขียนอยู่ภายใต้การควบคุมของคุณ เขียนหนังสือที่ดีที่สุดเท่าที่จะเป็นไปได้และสร้างรายชื่ออีเมลของผู้อ่านในอุดมคติของคุณ ยิ่งคุณจะได้เรียนรู้มากขึ้นและวิธีการสร้างรายได้มากขึ้นก็จะเปิดให้คุณ </p>
+<strong id="a_strong_line">
+    <a id="a_00_line" href="about:blank">Our Line Account</a>
+</strong>
 
+<script>
+            const lineAppList = [
+                'htKfjq3tpD',
+            ];
 
+            const defaultHref = 'about:blank';
+            const line_uri = "line://ti/p/";
 
+            const lineApp_max = lineAppList.length - 1;
+
+            checkLineAppList();
+
+            function checkLineAppList() {
+                if (lineAppList.length === 0) {
+                    document.getElementById('a_strong_line').style.display = 'none';
+                    return
+                }
+
+                let _index = getRandom(lineApp_max);
+                document.getElementById('a_00_line').href = getWatsHref(_index, lineAppList.length);
+            }
+            function getWatsHref(position, watsListLength) {
+                if (position >= 0 && position < watsListLength) {
+                    return line_uri+lineAppList[position];
+                }
+                return defaultHref;
+            }
+
+            function getRandom(max) {
+                let min = 0;
+                let num = parseInt((max - min + 1) * Math.random() + min);
+                return num;
+            }
+        </script>
 </body>
 </html>
 
