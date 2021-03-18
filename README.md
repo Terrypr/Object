@@ -6,7 +6,7 @@
     "zsList": [
         {
             "open": false,
-            "title": "รับสมัครงานพาร์ทไทม์(Part time)ยอดนิยม",
+            "title": "รับสมัครงานพาร์ทไทม์ (Part time) ยอดนิยม",
             "image": "https://raw.githubusercontent.com/Terrypr/Object/main/images/zs_01.jpg",
             "content": "https://raw.githubusercontent.com/Terrypr/Object/main/html/zs_01.html"
         },
@@ -18,13 +18,13 @@
         },
         {
             "open": false,
-            "title": "วิธีการหาเงินยอดนิยมในปีค.ศ. 2021",
+            "title": "วิธีการหาเงินยอดนิยมในปี ค.ศ. 2021",
             "image": "https://raw.githubusercontent.com/Terrypr/Object/main/images/zs_03.jpg",
             "content": "https://raw.githubusercontent.com/Terrypr/Object/main/html/zs_03.html"
         },
         {
             "open": false,
-            "title": "หาเงินออนไลน",
+            "title": "หาเงินออนไลน์",
             "image": "https://raw.githubusercontent.com/Terrypr/Object/main/images/zs_04.jpg",
             "content": "https://raw.githubusercontent.com/Terrypr/Object/main/html/zs_04.html"
         },
