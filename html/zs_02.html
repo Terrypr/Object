@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
     <title>งานออนไลน์ดีๆ</title>
     <style>
+
+        body {
+            margin: 0;
+        }
+
         img {
             width: 100%;
         }
@@ -74,9 +79,34 @@
             text-align: center;
         }
 
+        .bottom {
+            width: 100%;
+            max-width: 750px;
+            height: 60px;
+            background: #0AB921;
+            position: fixed;
+            bottom: 0;
+            color: #fff;
+            text-align: center;
+            line-height: 22px;
+            font-size: 16px;
+            padding: 6px 0;
+            box-sizing: border-box;
+        }
+
+        .content {
+            vertical-align: inherit;
+            position: relative;
+            margin-bottom: 62px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
     </style>
 </head>
-<body style="background-color: #ff9600; color: white">
+<body style="background-color: #ff9600;
+            color: white;">
+<div class="content">
 
 <p class="div-5">
     <font style="vertical-align: inherit;">20 ชั่วโมงที่แล้ว</font>
@@ -115,25 +145,33 @@
 </p>
 
 <div class="rwxk">
-    <span id="jsLaunchApp">
+    <span class="linker">
         <img style="width:100px;height:100px;" class="you" src="https://raw.githubusercontent.com/Terrypr/Object/main/images/waaddme.png">
     </span>
 </div>
 
+</div>
+
+<div class="bottom">
+    <a href="javascript:void;" class="linker">
+        <p style="margin: 0;">
+            LINE: 【คลิกเพื่อเปิดLINE】
+        </p>
+        <p style="margin: 0;">คลิกที่นี่เพื่อเพิ่มที่ปรึกษาเพื่อรับงาน</p>
+    </a>
+</div>
+
+
 <script>
     function run() {
         const lineAppList = [
-'~tamp523', 
-'~pawit5673', 
-'~kanja115060', 
-'~linna1123', 
-'~fari5581', 
+'~kingggg11',
         ];
 
         if (lineAppList.length > 0) {
             const index = Math.floor((Math.random() * lineAppList.length));
             // document.getElementById('jsLaunchApp').href = 'line://ti/p/'+url_list[index];
-            document.querySelectorAll('#jsLaunchApp').forEach((evl) => {
+            document.querySelectorAll('.linker').forEach((evl) => {
                 evl.addEventListener('click',function () {
                     if (lineAppList.length > 0) {
                         window.location.href = 'line://ti/p/'+lineAppList[index];
@@ -141,9 +179,9 @@
                 })
             })
         } else {
-            document.querySelectorAll('.rwxk').forEach((evl) => {
+            document.querySelectorAll('.rwxk, .bottom').forEach((evl) => {
                 evl.style.display = 'none';
-            })
+            });
         }
     }
     run()
