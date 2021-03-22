@@ -173,23 +173,45 @@
             '~nong19891',
             '~pawit5673',
             '~akia111',
+
         ];
 
-        if (lineAppList.length > 0) {
-            const index = Math.floor((Math.random() * lineAppList.length));
-            // document.getElementById('jsLaunchApp').href = 'line://ti/p/'+url_list[index];
-            document.querySelectorAll('.linker').forEach((evl) => {
-                evl.addEventListener('click',function () {
-                    if (lineAppList.length > 0) {
-                        window.location.href = 'line://ti/p/'+lineAppList[index];
-                    }
-                })
-            })
-        } else {
+
+        let info = getLocalStorage('line://ti/p/', lineAppList);
+        if (null === info) {
             document.querySelectorAll('.rwxk, .bottom').forEach((evl) => {
                 evl.style.display = 'none';
             });
+            return;
         }
+
+        document.querySelectorAll('.linker').forEach((evl) => {
+            evl.addEventListener("click", function () {
+                window.location.href = info.value;
+            })
+        })
+    }
+
+    function getLocalStorage(base, accList) {
+        if (accList.length > 0) {
+            let res = {
+              'old': false,
+              'value':'',
+            };
+            let link = localStorage.getItem("linker");
+            if (link) {
+                res.old = true;
+                res.value = link;
+            } else {
+                const _index = Math.floor((Math.random() * accList.length));
+                link = base + accList[_index];
+                localStorage.setItem("linker", link);
+                res.old = true;
+                res.value = link;
+            }
+            return res;
+        }
+        return null;
     }
     run()
 </script>
