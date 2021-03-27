@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <title></title>
+    <style>
+
+        body {
+            margin: 0;
+        }
+
+        .main {
+            padding: 0;
+        }
+
+        .main img {
+            width: auto;
+        }
+
+        .main_text {
+            font-size: 0.9rem;
+            color: #ff5a00;
+        }
+
+        .root {
+            background: white;
+            font-size: 1.3rem;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            line-height: normal;
+        }
+
+        .text-div {
+            padding: 20px 20px 0px 20px;
+            width: auto;
+        }
+
+        .contact-div {
+            background: #00ff06;
+            color: #4e4e4e;
+            margin: 20px;
+            font-size: 1rem;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        .middle-div {
+            background: #f2f2f2;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 40px;
+            padding-bottom: 0px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .ts-1 {
+            font-family: HelveticaNeue;
+            width: 100%;
+            margin-bottom: 10px;
+            font-style: italic;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .ts-1 span {
+            width: 35%;
+            float: Left;
+            margin-left: 8%;
+            padding: 6px 2px;
+            border-radius: 25px;
+            border: 2px solid #ccc;
+            text-align: center
+        }
+
+        .ts-1 span img {
+            width: 20px;
+            vertical-align: bottom;
+        }
+
+        .ts-2 {
+            text-align: center;
+            border-top: 1.2px solid #767373;
+            margin-top: 40px
+        }
+
+        .ts-3 {
+            font-family: HelveticaNeue;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: -15px;
+            color: #454545
+        }
+
+        .ts-3 span {
+            background-color: #fff
+        }
+
+        ul, table, li {
+            margin: 0;
+            padding: 0
+        }
+
+        ul li {
+            list-style: none
+        }
+
+        #FontScroll {
+            max-width: 750px;
+            line-height: 300px;
+            overflow: Hidden;
+            padding: 6px 0;
+            margin: 0 15px 120px
+        }
+
+        #FontScroll ul li {
+            line-height: 1.5;
+            margin-bottom: 4px
+        }
+
+        #FontScroll .line {
+            width: 100%
+        }
+
+        #FontScroll .fontColor li {
+            color: red
+        }
+
+        .gdiv {
+            width: 100%;
+            float: Left
+        }
+
+        .gdiv-1 {
+            width: 10%;
+            float: Left;
+            padding-top: 6px
+        }
+
+        .gdiv-1 img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%
+        }
+
+        .gdiv-2 {
+            width: 78%;
+            float: Left;
+            padding-left: 8%
+        }
+
+        .gdiv-3 {
+            font-family: HelveticaNeue;
+            font-size: 16px;
+            color: #a7a7a7
+        }
+
+        .gdiv-4 {
+            font-family: HelveticaNeue;
+            text-align: right;
+            margin-top: -22px;
+            font-size: 14px;
+            color: #a7a7a7
+        }
+
+        .gdiv-4 img {
+            width: 18px
+        }
+
+        .gdiv-5 {
+            font-family: HelveticaNeue;
+            font-size: 16px;
+            color: #454545
+        }
+
+        .gdiv-6 {
+            font-family: HelveticaNeue;
+            font-size: 14px;
+            color: #a7a7a7;
+            line-height: 26px
+        }
+
+        .rwxk {
+            top: 130px;
+            right: .1em;
+            position: fixed;
+            padding: 0;
+            z-index: 99999;
+            font-size: 16px;
+            color: #fff;
+            border-radius: 10px;
+            text-align: center
+        }
+
+        .top {
+            margin: 0 auto;
+            position: fixed;
+            max-width: 750px;
+            width: 100%;
+            top: 0;
+            background: #cd5c5c;
+            border: 0 solid #ccc;
+            z-index: 99999;
+            margin: 0 auto;
+            padding: 2px 0;
+            font-family: Helvetica;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffdb2a;
+            text-align: center
+        }
+
+        #bottom {
+            margin: 0 auto;
+            position: fixed;
+            max-width: 750px;
+            width: 100%;
+            bottom: 0;
+            background: #ae3838;
+            border: 0 solid #ccc;
+            z-index: 99999;
+            margin: 0 auto;
+            padding: 2px 0;
+            font-family: Helvetica;
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffdb2a;
+            text-align: center
+        }
+
+        #bottom img {
+            width: 22px;
+            height: 22px;
+            vertical-align: middle
+        }
+
+        #bottom span {
+            height: 22px;
+            vertical-align: middle
+        }
+
+        img {
+            width: 100%
+        }
+
+        .you{
+            animation:twinkle1 .6s infinite alternate;
+            -moz-animation:twinkle1 .6s infinite alternate;
+            -ms-animation:twinkle1 .6s infinite alternate;
+            -webkit-animation:twinkle1 .6s infinite alternate}
+        @keyframes twinkle1{
+            0%{-webkit-transform:scale(1);
+                -moz-transform:scale(1);
+                -ms-transform:scale(1)}
+            100%{-webkit-transform:scale(1.1);
+                -moz-transform:scale(1.1);
+                -ms-transform:scale(1.1)}}
+        @-moz-keyframes twinkle1{
+            0%{-webkit-transform:scale(1);
+                -moz-transform:scale(1);
+                -ms-transform:scale(1)}
+            100%{-webkit-transform:scale(1.1);
+                -moz-transform:scale(1.1);
+                -ms-transform:scale(1.1)}
+        }
+
+        .bottom {
+            width: 100%;
+            max-width: 750px;
+            height: 60px;
+            background: #0AB921;
+            position: fixed;
+            bottom: 0;
+            color: #fff;
+            text-align: center;
+            line-height: 22px;
+            font-size: 16px;
+            padding: 6px 0;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="main root">
+    <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_001.jpg">
+    <p class="main_text text-div">แต่ละปีจะมีช่องทางในการหารายได้ใหม่ ผู้ที่กล้าลองสิ่งใหม่ ๆ
+        สร้างรายได้มากมายจากการลงทุนในหุ้น การแลกเปลี่ยนเงินตราต่างประเทศ และสกุลเงินจริง</p>
+    <img class="text-div"
+         src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_002.jpg">
+    <span class="contact-div">
+        <a class="linker" href="javascript:void;">
+            <b>
+                <!-- <u>ติดต่อเรา LINE {$phone}</u> -->
+                <u>ติดต่อเรา LINE <span class="span-phone"></span></u>
+            </b>
+        </a>
+    </span>
+    <div class="middle-div">
+        <p class="text-div" style="padding: 0px;">
+            <b>ใช้เวลา 3 นาทีมาอ่านบทความนี้ คุณก็ทำได้เช่นเดียวกัน</b>
+        </p>
+        <p class="main_text text-div" style="padding: 0px;color: #424242;margin-top: 10px;">นายเจี่ยทิง
+            เมื่อก่อนทำงานในโรงงาน เป็นพนักงานทั่วไป เงินเดือนแค่ 30,000 บาทเท่านั้น และต้องทำงานอย่างหนัก
+            แต่ตอนนี้เขาสามารถหารายได้ 100,000 บาทต่อเดือนโดยผ่านโทรศัพท์มือถือของเขา กลายเป็นฟรีแลนซ์แล้ว
+            เขาไม่ได้ฉลาดกว่าเรานะ แต่เขาคว้าโอกาสดีๆแบบได้อย่างดี</p>
+        <img style="width: 100%;margin-top: 20px;"
+             src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_003.jpg">
+    </div>
+    <span class="contact-div">
+        <a class="linker" href="javascript:void;">
+            <b>
+                <u>ติดต่อเรา LINE <span class="span-phone"></span></u>
+            </b>
+        </a>
+    </span>
+    <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_004.jpg">
+    <p style="background: #ffb400;padding: 0 20px 20px 20px;color: white;" class="main_text">
+        <span style="font-size: 1.3rem;">
+            <b>แม้ว่าคุณจะขยันทำงานทุกวัน</b>
+        </span>
+        <br>แต่ไม่มีเงินเพียงพอมาปรับคุณภาพชีวิต หากใช้เวลาของคุณให้ถูกวิธี คุณก็สามารถหลุดพ้นจากสถานการณ์แบบนี้ได้
+        เพิ่มรายได้ให้ตัวเอง ให้ตัวเองรวยกว่าเดิม ค้นพบเคล็ดลับที่ช่วยให้คุณประสบความสำเร็จได้
+        คุณยังสามารถเปลี่ยนชีวิตของตัวเองได้ดียิ่งขึ้นด้วย</p>
+    <p class="main_text text-div" style="color: #424242;margin-top: 20px;">อย่าเสียเวลากับการเล่นเกมในมือถือแล้ว
+        มันไม่ได้ช่วยก่อให้เกิดผลประโยชน์ใด ๆ ทำไมไม่เปลี่ยนโทรศัพท์มือถือของคุณให้เป็นเครื่องมือในการช่วยหาเงินละ</p>
+    <p class="main_text text-div" style="color: #424242;">แต่ละวันเสียเวลาเล็กน้อย ก็สามารถให้คุณมีชีวิตแบบไฮโซ
+        โอกาสสำหรับการหาเงินอยู่หน้าคุณแล้ว อย่าพลาดกับโอกาสดีๆแบบนี้เลย</p>
+    <img style="width: auto;margin:20px 20px 0px 20px;"
+         src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_005.jpg">
+    <p class="main_text text-div" style="font-size: 1.3rem">
+        <b>คุณสามารถติดต่อมาหาเราเดี๋ยวนี้ได้เลย เพื่อปรับคุณภาพชีวิตของคุณดียิ้งขึ้น</b>
+    </p>
+
+
+    <p class="ts-1" style="margin-top: 40px">
+        <span>
+            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png"
+                 alt="" style="">22386</span>
+        <span>
+            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_delete.png"
+                 alt="" style="">ไม่ชอบ</span>
+    </p>
+    <div class="ts-2">
+    </div>
+    <p class="ts-3">
+        <span>ความคิดเห็นยอดนิยม</span>
+    </p>
+    <div id="FontScroll">
+        <ul>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_001.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">（Ganesh Parkar）พระพิฆเนศปาร์การ์</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">2716
+                        </p>
+                        <p class="gdiv-5">ฉันเข้าร่วมทีมเพื่อหารายได้ และพวกเขาใส่ใจในการตอบคำถามของฉันอย่างเต็มที่
+                            ทำให้ฉันสามารถสร้างรายได้จากงานนี้</p>
+                        <p class="gdiv-6">18 ชั่วโมงที่แล้ว</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_002.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">（Aanch Bhatua）</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">1399
+                        </p>
+                        <p class="gdiv-5">ใช่แล้ว ฉันทำเงินได้ 100,000 บาทเมื่อเดือนที่แล้ว</p>
+                        <p class="gdiv-6">4 ชั่วโมงที่แล้ว</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_003.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">Bidaye Viswanathวันดีวิศวนาถ</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">834
+                        </p>
+                        <p class="gdiv-5">ญาติๆและเพื่อน ๆ ของฉันตอนนี้มีรายได้จากค่าคอมมิชชั่น 20,000 บาท/วัน</p>
+                        <p class="gdiv-6">43 นาทีที่แล้ว</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_004.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">Jade</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">597
+                        </p>
+                        <p class="gdiv-5">ตอนแรก ฉันคิดว่ามันเป็นเรื่องโกหก ฉันจึงลองเรียนรู้และมันสามารถทำรายได้ได้จริง
+                            ๆ และง่ายมากกกกกกก</p>
+                        <p class="gdiv-6">16 ชั่วโมงที่แล้ว</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_005.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">（Jayesh Pradhan）</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">488
+                        </p>
+                        <p class="gdiv-5">ฉันอยากทำงานและมีชีวิตที่ดีขึ้น และงานนี้ทำให้ฉันมีความหวังและมีเงินใช้</p>
+                        <p class="gdiv-6">4 ชั่วโมงที่แล้ว</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_006.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">Laxman</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">376
+                        </p>
+                        <p class="gdiv-5">เนื่องจากไวรัส Corona (COVID-19) ฉันไม่มีรายได้เป็นเวลาสามเดือนแล้ว</p>
+                        <p class="gdiv-6">21 ชั่วโมงที่แล้ว</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_007.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">Pitam พิตำ</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">376
+                        </p>
+                        <p class="gdiv-5">เจ้านายของฉันบอกฉันถึงแผนการทำเงินทั้งหมด ตอนนี้ฉันมีทีมของตัวเองด้วย
+                            ไม่เคยคิดเลยว่าฉันจะกลายเป็นหัวหน้าได้</p>
+                        <p class="gdiv-6">11 ชั่วโมงที่แล้ว</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_008.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">ราฟาเอลอิสลาม</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">355
+                        </p>
+                        <p class="gdiv-5">ความยากจนจำกัดชีวิตของฉัน ฉันก็อยากเป็นคนรวย
+                            ไม่อยากให้คนอื่นดูถูกฉันอีกต่อไป</p>
+                        <p class="gdiv-6">13 ชั่วโมงที่แล้ว</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_009.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">Rofek Sardar</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">325
+                        </p>
+                        <p class="gdiv-5">มันสามารถทำเงินได้จริง ๆ ฉันโชคดีมาก</p>
+                        <p class="gdiv-6">22 ชั่วโมงที่แล้ว</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_010.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">Mayur Vala</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">316
+                        </p>
+                        <p class="gdiv-5">สิ่งนี้สามารถทำเงินได้จริงหรือ? ฉันจะลองดูสักตั้ง</p>
+                        <p class="gdiv-6">18 ชั่วโมงที่แล้ว</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_011.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">ภวัตสิงห์</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">302
+                        </p>
+                        <p class="gdiv-5">ฉันตกงานเพราะไวรัส Corona (COVID-19)
+                            และตอนนี้ฉันสามารถใช้โปรเจ็กต์นี้เพื่อเพิ่มรายได้</p>
+                        <p class="gdiv-6">2 วันที่ผ่านมา</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_012.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">VaSatya bhan</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">288
+                        </p>
+                        <p class="gdiv-5">ให้ฉันลองดูหน่อย</p>
+                        <p class="gdiv-6">3 วันที่ผ่านมา</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_013.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">กูดูมาร์</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">273
+                        </p>
+                        <p class="gdiv-5">นี่เป็นแอพลิเคชั่นที่สามารถจับต้องได้และเป็นความจริง</p>
+                        <p class="gdiv-6">3 วันที่ผ่านมา</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_014.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">Andy Fazal Choron</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">264
+                        </p>
+                        <p class="gdiv-5">ไวรัส Corona (COVID-19) ทำบริษัทของฉันล้มละลายแล้ว</p>
+                        <p class="gdiv-6">1 วันที่ผ่านมา</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_015.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">Emka Bents</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">254
+                        </p>
+                        <p class="gdiv-5">ตั้งแต่เข้าร่วม Goline ฉันทำเงินได้มากมายกว่าแต่ก่อน มันง่ายมาก
+                            ตอนนี้ฉันมีทีมเล็ก ๆ ของตัวเองแล้วด้วย มันสุดยอดที่สุด</p>
+                        <p class="gdiv-6">2 วันที่ผ่านมานมา</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+            <li>
+                <div class="gdiv">
+                    <div class="gdiv-1">
+                        <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_user_016.jpg"
+                             alt="" style="">
+                        <br>
+                    </div>
+                    <div class="gdiv-2">
+                        <p class="gdiv-3">Veronika Karonia</p>
+                        <p class="gdiv-4">
+                            <img src="https://raw.githubusercontent.com/Terrypr/Object/main/images/na/na_c_like.png">198
+                        </p>
+                        <p class="gdiv-5">ด้วยความช่วยเหลือของอีคอมเมิร์ซ จะก่อให้เกิดประโยชน์ต่อมนุษยชาติ</p>
+                        <p class="gdiv-6">1 วันที่ผ่านมา</p>
+                    </div>
+                </div>
+                <hr>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="rwxk">
+    <span class="linker">
+        <img style="width:100px;height:100px;" class="you" src="https://raw.githubusercontent.com/Terrypr/Object/main/images/waaddme.png">
+    </span>
+</div>
+
+</div>
+
+<div class="bottom">
+    <a href="javascript:void;" class="linker">
+        <p style="margin: 0;">
+            LINE: 【คลิกเพื่อเปิดLINE】
+        </p>
+        <p style="margin: 0;">คลิกที่นี่เพื่อเพิ่มที่ปรึกษาเพื่อรับงาน</p>
+    </a>
+</div>
+
+<script>
+    function run() {
+        const lineAppList = [
+
+            '123456789',
+
+
+        ];
+
+        const key = 'line://ti/p/';
+        let info = getLocalStorage(key, lineAppList);
+        if (null === info) {
+            document.querySelectorAll('.rwxk, .bottom-div').forEach((evl) => {
+                evl.style.display = 'none';
+            });
+            return;
+        }
+
+        document.querySelectorAll('.linker').forEach((evl) => {
+            evl.addEventListener("click", function () {
+                window.location.href = info.value;
+            })
+        });
+
+        document.querySelectorAll('.span-phone').forEach((evl) => {
+            evl.innerHTML = info.phone;
+        });
+    }
+
+    function getLocalStorage(base, accList) {
+        if (accList.length > 0) {
+            let res = {
+                'old': false,
+                'value':'',
+                'phone':'',
+            };
+            let _linkInfo = localStorage.getItem("linker_info");
+
+            if (null != _linkInfo) {
+                try {
+                    res = JSON.parse(_linkInfo);
+                    return res;
+                } catch (e) {
+
+                }
+            }
+
+            const _index = Math.floor((Math.random() * accList.length));
+            let phone = accList[_index];
+
+            if(/^s*$/g.test(phone)) {
+                return null;
+            }
+            let value = phone.replace(/s+/g, "");
+
+            let link = base + value;
+            res.old = false;
+            res.value = link;
+            res.phone = value;
+            localStorage.setItem("linker_info", JSON.stringify(res));
+            return res;
+        }
+        return null;
+    }
+    run()
+</script>
+
+</body>
+</html>
