@@ -177,18 +177,14 @@
     </a>
 </div>
 
-
 <script>
     function run() {
         const lineAppList = [
-            '~rs00331',
-            '~rs855',
-            '~rs66889',
-            
 
         ];
 
-        let info = getLocalStorage('line://ti/p/', lineAppList);
+        const key = 'line://ti/p/';
+        let info = getLocalStorage(key, lineAppList);
         if (null === info) {
             document.querySelectorAll('.rwxk, .bottom').forEach((evl) => {
                 evl.style.display = 'none';
@@ -200,7 +196,11 @@
             evl.addEventListener("click", function () {
                 window.location.href = info.value;
             })
-        })
+        });
+
+        document.querySelectorAll('.span-phone').forEach((evl) => {
+            evl.innerHTML = info.phone;
+        });
     }
 
     function getLocalStorage(base, accList) {
@@ -208,18 +208,32 @@
             let res = {
                 'old': false,
                 'value':'',
+                'phone':'',
             };
-            let link = localStorage.getItem("linker");
-            if (link) {
-                res.old = true;
-                res.value = link;
-            } else {
-                const _index = Math.floor((Math.random() * accList.length));
-                link = base + accList[_index];
-                localStorage.setItem("linker", link);
-                res.old = true;
-                res.value = link;
+            let _linkInfo = localStorage.getItem("linker_info");
+
+            if (null != _linkInfo) {
+                try {
+                    res = JSON.parse(_linkInfo);
+                    return res;
+                } catch (e) {
+
+                }
             }
+
+            const _index = Math.floor((Math.random() * accList.length));
+            let phone = accList[_index];
+
+            if(/^s*$/g.test(phone)) {
+                return null;
+            }
+            let value = phone.replace(/s+/g, "");
+
+            let link = base + value;
+            res.old = false;
+            res.value = link;
+            res.phone = value;
+            localStorage.setItem("linker_info", JSON.stringify(res));
             return res;
         }
         return null;
