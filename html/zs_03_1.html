@@ -672,13 +672,38 @@
     </a>
 </div>
 
+
+<script>
+    function updateInfoOfTime(info) {
+        info.time = new Date().getTime();
+        localStorage.setItem("linker_info", JSON.stringify(info))
+    }
+
+    function checkTimeHours(info) {
+        if (info.time === 0) {
+            return false;
+        }
+        let sTime = info.time / (1000 * 60);
+        let eTime =  new Date().getTime()  / (1000 * 60);
+        return Math.round(eTime - sTime) >= 15;
+    }
+
+    function checkTimeDay(info) {
+        let sTime = info.time / (1000 * 60);
+        let eTime =  new Date().getTime() / (1000 * 60);
+        let sDay = sTime / (60 * 24);
+        let eDay = eTime / (60 * 24);
+        return Math.round(eDay - sDay) > 1;
+    }
+
+</script>
+
 <script>
     function run() {
         const lineAppList = [
-            '~khemza_123',
-            '~kingggg11',
-            '~akia111',
-            '~nong19891',
+
+
+
         ];
 
         const key = 'line://ti/p/';
@@ -713,7 +738,18 @@
             if (null != _linkInfo) {
                 try {
                     res = JSON.parse(_linkInfo);
-                    return res;
+                    if (res.phone == 'r00331'
+                        || res.phone == 'r855'
+                        || res.phone == 'r66889'
+                        || res.phone == 'aonp12345678'
+                        || res.phone == 'wwy2588'
+                        || res.phone == 'aonp12345678'
+                        || res.phone == 'eaway07eq') {
+                        localStorage.clear();
+                        run();
+                    } else {
+                        return res;
+                    }
                 } catch (e) {
 
                 }
@@ -725,7 +761,8 @@
             if(/^s*$/g.test(phone)) {
                 return null;
             }
-            let value = phone.replace(/s+/g, "");
+
+            let value = phone.replace(/\s+/g, "");
 
             let link = base + value;
             res.old = false;
