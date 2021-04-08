@@ -1,7 +1,7 @@
 `{
     "br":"http://htmlpreview.github.io/",
     "w":false,
-    "n":true,
+    "n":false,
     "openL":"http://htmlpreview.github.io/?https://raw.githubusercontent.com/Terrypr/Object/main/html/zs_02.html",
     "zsList":[
         {
